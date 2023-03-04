@@ -39,7 +39,7 @@ function NavigationBar(props) {
     if (props.onTabChange) {
       switch (newValue) {
         case 0:
-          props.onTabChange('Tab1');
+          props.onTabChange('Lakes Database');
           break;
         case 1:
           props.onTabChange('Tab2');
@@ -72,7 +72,7 @@ function NavigationBar(props) {
           indicatorColor="primary"
           textColor="primary"
         >
-          <Tab className={classes.tab} label="Tab1" />
+          <Tab className={classes.tab} label="Lakes Database" />
           <Tab className={classes.tab} label="Tab2" />
           <Tab className={classes.tab} label="Tab3" />
           <Tab className={classes.tab} label="Tab4" />

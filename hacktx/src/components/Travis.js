@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Bar } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import Papa from 'papaparse';
 
 class Travis extends Component {
@@ -13,37 +13,20 @@ class Travis extends Component {
           {
             label: 'Water Level',
             data: [],
-            backgroundColor: 'blue',
-          },
-          {
-            label: 'Surface Area',
-            data: [],
-            backgroundColor: 'green',
+            borderColor: 'blue',
+            fill: false,
           },
           {
             label: 'Reservoir Storage',
             data: [],
-            backgroundColor: 'red',
-          },
-          {
-            label: 'Conservation Storage',
-            data: [],
-            backgroundColor: 'orange',
+            borderColor: 'red',
+            fill: false,
           },
           {
             label: 'Percent Full',
             data: [],
-            backgroundColor: 'purple',
-          },
-          {
-            label: 'Conservation Capacity',
-            data: [],
-            backgroundColor: 'brown',
-          },
-          {
-            label: 'Dead Pool Capacity',
-            data: [],
-            backgroundColor: 'grey',
+            borderColor: 'purple',
+            fill: false,
           },
         ],
       },
@@ -71,20 +54,18 @@ class Travis extends Component {
   }
 
   componentDidMount() {
-    Papa.parse('/lake_travis.csv', {
+    Papa.parse('lake_travis.csv', {
       download: true,
+      comments: '#',
       header: true,
+      skipEmptyLines: true,
       complete: (results) => {
         const data = results.data;
 
         const labels = data.map((item) => item.date);
         const waterLevels = data.map((item) => item.water_level);
-        const surfaceAreas = data.map((item) => item.surface_area);
         const reservoirStorages = data.map((item) => item.reservoir_storage);
-        const conservationStorages = data.map((item) => item.conservation_storage);
         const percentFull = data.map((item) => item.percent_full);
-        const conservationCapacity = data.map((item) => item.conservation_capacity);
-        const deadPoolCapacity = data.map((item) => item.dead_pool_capacity);
 
         const chartData = {
           labels: labels,
@@ -92,37 +73,20 @@ class Travis extends Component {
             {
               label: 'Water Level',
               data: waterLevels,
-              backgroundColor: 'blue',
-            },
-            {
-              label: 'Surface Area',
-              data: surfaceAreas,
-              backgroundColor: 'green',
+              borderColor: 'blue',
+              fill: false,
             },
             {
               label: 'Reservoir Storage',
               data: reservoirStorages,
-              backgroundColor: 'red',
-            },
-            {
-              label: 'Conservation Storage',
-              data: conservationStorages,
-              backgroundColor: 'orange',
+              borderColor: 'red',
+              fill: false,
             },
             {
               label: 'Percent Full',
               data: percentFull,
-              backgroundColor: 'purple',
-            },
-            {
-              label: 'Conservation Capacity',
-              data: conservationCapacity,
-              backgroundColor: 'brown',
-            },
-            {
-              label: 'Dead Pool Capacity',
-              data: deadPoolCapacity,
-              backgroundColor: 'grey',
+              borderColor: 'purple',
+              fill: false,
             },
           ],
         };
@@ -135,7 +99,7 @@ class Travis extends Component {
   render() {
     return (
       <div className="travis-chart">
-        <Bar
+        <Line
           data={this.state.chartData}
           options={this.state.options}
           height={400}
