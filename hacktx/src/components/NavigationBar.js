@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, IconButton, Tabs, Tab } from '@material-ui/core';
-import WaterIcon from '@material-ui/icons/Opacity';
+import { AppBar, Toolbar, Typography, Tabs, Tab } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import texas from './TEXAS.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1,  
   },
   logo: {
     marginRight: theme.spacing(2),
@@ -28,6 +28,11 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 'inherit',
     },
   },
+  texasIcon: {
+    height: '50px',
+    width: '50px',
+    marginLeft: '-10px',
+  },
 }));
 
 function NavigationBar(props) {
@@ -39,16 +44,16 @@ function NavigationBar(props) {
     if (props.onTabChange) {
       switch (newValue) {
         case 0:
-          props.onTabChange('Lakes Database');
+          props.onTabChange('Lake Trends');
           break;
         case 1:
-          props.onTabChange('Tab2');
+          props.onTabChange('Austin Lakes');
           break;
         case 2:
-          props.onTabChange('Tab3');
+          props.onTabChange('Protect Our Lakes');
           break;
         case 3:
-          props.onTabChange('Tab4');
+          props.onTabChange('About Us');
           break;
         default:
           break;
@@ -59,11 +64,9 @@ function NavigationBar(props) {
   return (
     <AppBar position="static" color="default">
       <Toolbar>
-        <IconButton edge="start" className={classes.logo} color="inherit" aria-label="menu">
-          <WaterIcon className={classes.WaterIcon} />
-        </IconButton>
+        <img src={texas} alt="Texas" className={classes.texasIcon} />
         <Typography variant="h6" className={classes.title}>
-          Aqua Stats
+          Texas Eco
         </Typography>
         <Tabs
           className={classes.tabs}
@@ -72,10 +75,10 @@ function NavigationBar(props) {
           indicatorColor="primary"
           textColor="primary"
         >
-          <Tab className={classes.tab} label="Lakes Database" />
-          <Tab className={classes.tab} label="Tab2" />
-          <Tab className={classes.tab} label="Tab3" />
-          <Tab className={classes.tab} label="Tab4" />
+          <Tab className={classes.tab} label="Lake Trends" />
+          <Tab className={classes.tab} label="Austin Lakes" />
+          <Tab className={classes.tab} label="Protect Our Lakes" />
+          <Tab className={classes.tab} label="About Us" />
         </Tabs>
       </Toolbar>
     </AppBar>

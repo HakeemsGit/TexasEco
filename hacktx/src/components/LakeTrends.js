@@ -2,7 +2,9 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
-import Travis from "./Travis";
+import info from '../Images/info.png';
+import { Grid } from "@material-ui/core";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,25 +33,28 @@ const useStyles = makeStyles((theme) => ({
   },
   paragraph: {
     textAlign: "left",
-    marginTop: theme.spacing(4),
-
+    marginTop: theme.spacing(2),
     marginLeft: theme.spacing(3),
     marginBottom: theme.spacing(2),
     textIndent: "1em",
   },
 }));
 
-function LakesDatabase() {
+function LakeTrends() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <Typography variant="h3" gutterBottom>
-          Lake Trends:
+        Lake Trends
         </Typography>
+        <Grid item>
+                    <img src={info} alt="river" className={classes.image} />
+        </Grid>
+
         <div className={classes.imageContainer}>
-          <Travis />
+          <lakeTrends />
         </div>
         <Typography variant="body1" gutterBottom className={classes.paragraph}>
           Texas lakes face a range of challenges in maintaining water quality and levels, including pollution, rising temperatures, climate change, increased drought intensity, and the competing demands of a growing population. The water in many Texas lakes contains high levels of pollutants, including fecal coliform bacteria, nitrogen, and phosphorus, which can harm aquatic life and make the water unsafe for recreational use. Agricultural runoff and discharge from wastewater treatment plants are some of the primary sources of this pollution.
@@ -65,4 +70,4 @@ function LakesDatabase() {
   );
 }
 
-export default LakesDatabase;
+export default LakeTrends;

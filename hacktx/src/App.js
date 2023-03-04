@@ -1,28 +1,28 @@
 import React, { useState } from "react";
 import NavigationBar from "./components/NavigationBar";
-import LakesDatabase from "./components/LakesDatabase";
-import Tab2 from "./components/Tab2";
-import Tab3 from "./components/Tab3";
-import Tab4 from "./components/Tab4";
+import LakeTrends from "./components/LakeTrends";
+import AustinLakes from "./components/AustinLakes";
+import ProtectOurLakes from "./components/ProtectOurLakes";
+import AboutUs from "./components/AboutUs";
 
 import "./App.css"; // import the provided CSS file
 
 function App() {
-  const [activeTab, setActiveTab] = useState("Lakes Database");
+  const [activeTab, setActiveTab] = useState("Lake Trends");
 
   const handleTabChange = (tabName) => {
     setActiveTab(tabName);
   };
 
   let content;
-  if (activeTab === "Lakes Database") {
-    content = <LakesDatabase />;
-  } else if (activeTab === "Tab2") {
-    content = <Tab2 />;
-  } else if (activeTab === "Tab3") {
-    content = <Tab3 />;
-  } else if (activeTab === "Tab4") {
-    content = <Tab4 />;
+  if (activeTab === "Lake Trends") {
+    content = <LakeTrends />;
+  } else if (activeTab === "Austin Lakes") {
+    content = <AustinLakes />;
+  } else if (activeTab === "Protect Our Lakes") {
+    content = <ProtectOurLakes />;
+  } else if (activeTab === "About Us") {
+    content = <AboutUs />;
   }
 
   return (
