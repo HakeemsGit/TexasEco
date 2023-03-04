@@ -6,6 +6,7 @@ import Tab3 from "./components/Tab3";
 import Tab4 from "./components/Tab4";
 
 import "./App.css"; // import the provided CSS file
+import Travis from "./components/Travis";
 
 function App() {
   const [activeTab, setActiveTab] = useState("Tab1");
@@ -27,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      
+      <Travis />
       <NavigationBar onTabChange={handleTabChange} activeTab={activeTab} />
       <div className="TabContent">{content}</div>
       
