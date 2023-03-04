@@ -4,6 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import texas from '../Images/Texas.jpg';
+import Travis from "./Travis";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,7 +33,7 @@ function Tab1() {
       <Paper className={classes.paper}>
         <Grid container spacing={2}>
           <Grid item>
-            <img src={texas} alt="Tab1" className={classes.image} />
+            <Travis />
           </Grid>
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={2}>

@@ -28,9 +28,10 @@ function App() {
 
   return (
     <div className="App">
-      <Travis />
       <NavigationBar onTabChange={handleTabChange} activeTab={activeTab} />
-      <div className="TabContent">{content}</div>
+      <div className="TabContent">{content}
+
+      </div>
       
     </div>
   );

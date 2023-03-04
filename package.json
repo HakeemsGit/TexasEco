@@ -1,0 +1,19 @@
+{
+  "name": "texaseco",
+  "version": "1.0.0",
+  "description": "Used for displaying information about the Environment in Texas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HakeemsGit/TexasEco.git"
+  },
+  "author": "Hakeem Telsiz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HakeemsGit/TexasEco/issues"
+  },
+  "homepage": "https://github.com/HakeemsGit/TexasEco#readme"
+}
